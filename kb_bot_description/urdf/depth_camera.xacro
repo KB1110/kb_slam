@@ -1,0 +1,36 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <link name="depth_camera_link">
+        <visual>
+            <origin xyz="0.005 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            
+            <geometry>
+                <box size="0.01 0.08 0.02"/>
+            </geometry>
+
+            <material name = "red" />
+
+        </visual>
+
+        <collision>
+            <origin xyz="0.005 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.01 0.08 0.02"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_box mass = "0.05" length = "0.01" breadth = "0.08" height = "0.02" x = "0.005" y = "0.0" z = "0.0" roll = "0.0" pitch = "0.0" yaw = "0.0" />
+    
+    </link>
+
+    <joint name="depth_camera_joint" type="fixed">
+        <origin xyz="0.1 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="depth_camera_link"/>
+    </joint>
+
+    <gazebo reference="depth_camera_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+</robot>
