@@ -1,0 +1,9 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="kb_bot">
+    <xacro:include filename = "inertial_macros.xacro" />
+    <xacro:include filename = "colors.xacro" />
+    <xacro:include filename = "kb_bot_core.xacro" />
+    <xacro:include filename = "lidar.xacro" />
+    <!-- <xacro:include filename = "depth_camera.xacro" /> -->
+    <xacro:include filename = "gazebo_control.xacro" />
+</robot>
